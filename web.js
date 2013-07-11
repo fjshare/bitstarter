@@ -7,10 +7,10 @@ var app = express.createServer(express.logger());
 var mesg = function (err, file) {
 
 var buffer = new Buffer(fs.readFileSync(file));
+
 return(buffer.toString('utf-8'));
 
-
-)};
+};
 
 
 app.get('/', function(request, response) {
