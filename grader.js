@@ -49,7 +49,7 @@ var assertFileExits = function(infile) {
 
 var checkHtml = function (Err, html, checks){
     if(Err){
-	console.log("Error:" + data.message);
+	console.log("Error:" + Err);
 	process.exit(1);
     } 
 
