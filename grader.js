@@ -5,6 +5,7 @@ Automatically grade file for the presence of specified HTML tags/attributes.
 Uses commander.js and cheerio.  Teaches command line application development
 and basic DOM parsing.
 
+
 References:
 
  + cheerio
@@ -23,10 +24,14 @@ References:
 */
 
 var fs = require ('fs');
+var sys = require('util');
+var rest = require('restler');
 var program = require('commander');
 var cheerio = require('cheerio');
-var HTMLFILE_DEFAULT = "./index.html"
-var CHECKSFILE_DEFAULT = "checks.json"
+var HTMLFILE_DEFAULT = "./index.html";
+var CHECKSFILE_DEFAULT = "checks.json";
+
+
 
 var assertFileExits = function(infile) {
     
@@ -41,6 +46,19 @@ var assertFileExits = function(infile) {
 
 };
 
+
+var checkHtml = function (Err, html, checks){
+    if(Err){
+	console.log("Error:" + data.message);
+	process.exit(1);
+    } 
+
+    var checkJson = checkHtmlFile(html, checks);
+    var outJson = JSON.stringify(checkJson, null, 4);
+    console.log(outJson);
+};
+
+
 var cheerioHtmlFile = function(htmlfile) {
     return cheerio.load(fs.readFileSync(htmlfile));
 
@@ -53,7 +71,13 @@ var loadChecks = function(checksfile) {
 
 var checkHtmlFile = function(htmlfile, checksfile) {
 
-    $ = cheerioHtmlFile(htmlfile);
+    if(program.url){
+
+     $ = cheerio.load(htmlfile);   
+    }else {
+    	$ = cheerioHtmlFile(htmlfile);
+
+    }	
     var checks = loadChecks(checksfile).sort();
     var out = {};
     
@@ -75,16 +99,26 @@ var clone = function(fn) {
 
 if(require.main == module) {
 
-    program 
+     program 
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExits), CHECKSFILE_DEFAULT)
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExits), HTMLFILE_DEFAULT)
-        .parse(process.argv);
+        .option('-u , --url <html_file>', 'Path to url' )
+	.parse(process.argv);
     
-    var checkJson = checkHtmlFile(program.file, program.checks);
-    var outJson = JSON.stringify(checkJson, null, 4);
-    console.log(outJson);
+    if(program.url){
 
-}else{
+	rest.get(program.url).on('complete', function(result){
+	checkHtml((result instanceof Error), result, program.checks); 
+	    //var checkJson = checksHtmlFile(program.url, program.checks);
+    });	
+    }else 
+
+	var checkJson = checkHtmlFile(program.file, program.checks);
+        var outJson = JSON.stringify(checkJson, null, 4);
+        console.log(outJson);
+
+}
+else{
 
     exports.checkHtmlFile = checkHtmlFile;
     
