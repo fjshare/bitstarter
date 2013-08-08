@@ -1,3 +1,10 @@
+
+      div.addthis_toolbox {
+       width: 180px;
+       margin: 0 auto;   
+
+      }
+      
 <!DOCTYPE html>
 <html lang ="en">
   <head>
@@ -124,9 +131,30 @@
        color: #ccccff;
       
       }
+      
+     <!-- /* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      -->
+      div.addthis_toolbox {
+      width:180px;
+      margin: 0 auto;
+      }
+
 
     </style>
     
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43046692-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
   </head>
 
 <body>
@@ -137,7 +165,7 @@
   <div class="navbar-inner">
    <div class="container"> 
     <button type="button" class="btn btn-navbar"
-	    data-toggle="collapse" data-target=".nav-callapse">
+	        data-toggle="collapse" data-target=".nav-callapse">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -176,28 +204,28 @@
   </div> 
  <div class="row-fluid pitch">
    <div class="span5 offset1 video">
-     <img class="img-polaroid" alt="Placeholder" src="http://placehold.it/480x300">
+     <img class="img-polaroid" src="http://placehold.it/480x300">
    </div>  
    <!-- We define a new 'actions' div to contain statistics, order, and share buttons. -->
    <div class="span5 actions">
      <div class="span8 offset2">
        <div class="statistics">
-	 <div class="span4">
-	   <!-- linediv-l and linediv-r give dividing lines that look different in horizontal and vertical layouts, illustrating media queries. -->
-	   <div class="linediv-l">
-	   <h3>1000</h3> <p>backers</p>
-	   </div>
-	 </div>
-	 <div class="span4">
-	   <div class="linediv-c">
-	     <h3>$6000</h3> <p>of $10,000</p>
-	   </div>
-	 </div> 
-	 <div class="span4">
-	   <div class="linediv-r">
-	   <h3>10</h3> <p>days left</p>
-	   </div>
-	 </div> 
+	  <div class="span4">
+	       <!-- linediv-l and linediv-r give dividing lines that look different in horizontal and vertical layouts, illustrating media queries. -->
+	          <div class="linediv-l">
+		       <h3>1000</h3> <p>backers</p>
+		          </div>
+		   </div>
+	   <div class="span4">
+	        <div class="linediv-c">
+		       <h3>$6000</h3> <p>of $10,000</p>
+		          </div>
+		 </div> 
+	    <div class="span4">
+	         <div class="linediv-r">
+		      <h3>10</h3> <p>days left</p>
+		         </div>
+		  </div> 
        </div>
      </div>
      
@@ -205,20 +233,32 @@
        <!-- Bootstrap progress bar ->
        <!-- http://twitter.github.io/bootstrap/components.html#progress -->
        <div class="thermometer progress active">
-	 <div class="bar bar-success" style="width: 60%;"></div>
- 	 <div class="bar bar-warning" style="width: 40%;"></div>
+	  <div class="bar bar-success" style="width: 60%;"></div>
+	   <div class="bar bar-warning" style="width: 40%;"></div>
        </div>
      </div>
      <div class="span6 offset3 order">
        <!-- Standard Bootstrap button -->
        <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
-       <button class="btn btn-success btn-large">Preorder</button>
+       <a class="coinbase-button" data-button-style="custom_large" data-button-text="Preoder with Bitcoin" data-code="4d4b84bbad4508b64b61d372ea394dad" href="https://coinbase.com/checkouts/4d4b84bbad4508b64b61d372ea394dad">Preorder with Bitcoin</a>
+<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+       <!--<button class="btn btn-success btn-large">Preorder</button> -->
        </div>
      <div class="span8 offset2 social">
        <!-- Social buttons are not included in default Bootstrap -->
        <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
-       <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
-       <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+     <!-- AddThis Button BEGIN -->
+     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+       <a class="addthis_button_preferred_1"></a>
+       <a class="addthis_button_preferred_2"></a>
+       <!--<a class="addthis_button_preferred_3"></a>
+       <a class="addthis_button_preferred_4"></a> -->
+       <a class="addthis_button_compact"></a>
+       <a class="addthis_counter addthis_bubble_style"></a>
+     </div>
+     <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5203378f0dd0f93b"></script>
+     <!-- AddThis Button END --> 
      </div>  
     </div>
    </div>
@@ -230,14 +270,14 @@
 
    <div class="row-fluid section1">
      <div class="span5 offset1 asset">
-       <img class="img-polaroid" alt="Placeholder" src="http://placehold.it/480x300">
+       <img class="img-polaroid" src="http://placehold.it/480x300">
      </div>
      <div class="span5 copy">
        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget lobortis arcu. Curabitur gravida imperdiet erat sit amet suscipit. Fusce vel tortor ut augue aliquet porta. Phasellus interdum lacus vel ante tristique ullamcorper. Phasellus dictum imperdiet ante vitae mollis. Vestibulum pellentesque elit nec libero ornare, non sodales metus luctus. Vestibulum pharetra ipsum eu semper egestas. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Vivamus eu odio sit amet purus rutrum sollicitudin eget vitae elit. Pellentesque ligula orci, convallis at tincidunt eu, luctus id nisl. Ut euismod purus ac libero imperdiet, sed sodales ipsum sollicitudin. Nam ac sem et enim posuere euismod non nec diam. Proin placerat pharetra libero quis ullamcorper. Suspendisse ullamcorper sit amet nulla a iaculis. Donec cursus arcu sit amet sapien aliquet, id cursus arcu consequat.
 
-	  Vestibulum quis est iaculis, hendrerit ligula eu, lacinia sem. Nunc nec pharetra massa, ut ultricies sapien. Sed faucibus lobortis turpis in tincidunt. Donec rutrum leo non velit tincidunt interdum. Nunc sit amet rutrum turpis, sed mattis neque. Mauris semper adipiscing enim, ut feugiat metus bibendum in. Praesent ac dictum leo, non eleifend neque.
-	  </p>
-	</div>
+	   Vestibulum quis est iaculis, hendrerit ligula eu, lacinia sem. Nunc nec pharetra massa, ut ultricies sapien. Sed faucibus lobortis turpis in tincidunt. Donec rutrum leo non velit tincidunt interdum. Nunc sit amet rutrum turpis, sed mattis neque. Mauris semper adipiscing enim, ut feugiat metus bibendum in. Praesent ac dictum leo, non eleifend neque.
+	   </p>
+       </div>
       </div>
 
     <div class="row-fluid section2">
@@ -245,7 +285,7 @@
 	<p>Vestibulum auctor lorem sit amet velit sagittis venenatis. Quisque at orci id erat venenatis tempus. Cras venenatis lacus ut felis vestibulum tempus. Nulla sit amet nisi massa. Sed eget leo eget dui euismod imperdiet quis vitae leo. Nam vitae ultricies nulla. Nulla sed pulvinar orci. Proin elementum odio enim, non imperdiet purus laoreet sit amet. Nunc dignissim at ligula sit amet fringilla. Cras id massa sed turpis egestas convallis sit amet eu metus. Sed accumsan ante sed turpis mattis, id lacinia orci hendrerit. In rhoncus vel est eu dictum. Phasellus congue congue tellus facilisis blandit. Nullam porta lorem at arcu molestie, at imperdiet sapien condimentum. Nulla a sem dapibus, pulvinar nulla eu, luctus erat.
 
  Mauris fringilla, nunc eget egestas tempus, tellus lacus tincidunt libero, vitae interdum leo sem sollicitudin enim. Pellentesque sed odio quis ligula commodo consectetur. In hac habitasse platea dictumst. Nunc fermentum risus elit, quis semper metus bibendum vel. Aenean sapien mi, dictum eget venenatis et, scelerisque vitae quam. Donec tempor dolor vel rutrum sodales. Aenean et nunc suscipit dolor bibendum dictum sit amet vel mi. Etiam congue elit nisi, sed aliquet turpis tincidunt non. Sed at vulputate eros, id congue odio. Vestibulum porttitor euismod dolor, at dignissim odio. Duis ut nisl at est ultrices aliquam at euismod lectus. Nullam fringilla faucibus purus quis ullamcorper. Praesent quis neque ac ligula mattis consectetur.
-	  </p>
+	    </p>
 	</div>
       <div class="span5 asset">
 	<img class="img-polaroid" src="http://placehold.it/480x300">
@@ -259,47 +299,59 @@
       <div class="span10 offset1">
 	<h3>FAQ</h3>
 	<div class="accordion" id="accordion2">
-	  <div class="accordion-group">
-	    <div class="accordion-heading">
-	      <a class="accordion-toggle" data-toggle="collapse"
-		 data-parent="#accordion2" href="#collapseOne">
-		What does FAQ stand for?
-	      </a>
+	    <div class="accordion-group">
+	          <div class="accordion-heading">
+		          <a class="accordion-toggle" data-toggle="collapse"
+			      data-parent="#accordion2" href="#collapseOne">
+			    What does FAQ stand for?
+			          </a>
+			        </div>
+		      <div id="collapseOne" class="accordion-body collapse">
+			      <div class="accordion-inner">
+				Frequently Asked Question.
+				      </div>
+			          </div>
+		        </div>
+	      <div class="accordion-group">
+		    <div class="accordion-heading">
+		            <a class="accordion-toggle" data-toggle="collapse"
+			        data-parent="#accordion2" href="#collapseTwo">
+			      What's a Frequently Asked Question?
+			            </a>
+			        </div>
+		        <div id="collapseTwo" class="accordion-body collapse">
+			        <div class="accordion-inner">
+				  A question which is commonly asked by users.
+				        </div>
+				    </div>
+			  </div>
 	      </div>
-	    <div id="collapseOne" class="accordion-body collapse">
-	      <div class="accordion-inner">
-		Frequently Asked Question.
-	      </div>
-	    </div>
-	  </div>
-	  <div class="accordion-group">
-	    <div class="accordion-heading">
-	      <a class="accordion-toggle" data-toggle="collapse"
-		 data-parent="#accordion2" href="#collapseTwo">
-		What's a Frequently Asked Question?
-	      </a>
- 	    </div>
-	    <div id="collapseTwo" class="accordion-body collapse">
-	      <div class="accordion-inner">
-		A question which is commonly asked by users.
-	      </div>
- 	    </div>
-	  </div>
-	</div>
       </div>
 
    </div>   
-	 
+
     <!-- Not crucial, but we put this under a CC By-SA 3.0 license -->
     <!-- http://creativecomos.org/licenses/ -->
     <div class="row-fluid footer">
       <div class="span12">
 	<p>This work is licensed under the 
-	  <a href="http;//creativecommons.org/licenses/by-sa/3.0/">CC By-SA 3.o
-	    
-	    </a>, without al cruft that would otherwise be put a the buttom of the page.</p>
+	    <a href="http;//creativecommons.org/licenses/by-sa/3.0/">CC By-SA 3.o
+
+	          </a>, without al cruft that would otherwise be put a the buttom of the page.</p>
 	</div>
       </div>
     </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43046692-1', 'osatch.com');
+  ga('send', 'pageview');
+
+</script>
+
 </body>
 </html>  
